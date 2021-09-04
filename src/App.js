@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <Link to="/home">Home</Link>
+      <button>Data</button>
     </div>
   );
 }
