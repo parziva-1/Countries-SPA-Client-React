@@ -10,12 +10,11 @@ function NavBar() {
   const Close = () => setClick(false);
 
   return (
-    <div>
+    <div className={styles.navbar}>
       <div
         className={click ? styles.mainContainer : ""}
         onClick={() => Close()}
       />
-
       <nav className={styles.navbar} onClick={(e) => e.stopPropagation()}>
         <div className={styles.navContainer}>
           <NavLink exact to="/home" className={styles.navLogo}>

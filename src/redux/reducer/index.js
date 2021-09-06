@@ -2,6 +2,7 @@ import { GET_ALL_COUNTRIES } from "../actionsName";
 
 const iniState = {
   countries: [],
+  result: [],
 };
 
 const reducer = (state = iniState, action) => {
@@ -12,6 +13,9 @@ const reducer = (state = iniState, action) => {
         ...state,
         countries: action.payload,
       };
+    case "CountriesFilter":
+      console.log("CountriesFilter");
+      return { ...state, result: action.payload };
 
     default:
       return state;
