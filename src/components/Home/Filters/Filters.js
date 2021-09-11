@@ -125,9 +125,7 @@ const Filters = () => {
           name="activity"
           className={styles.button}
         >
-          <option value={"d"} value="All">
-            All
-          </option>
+          <option value="All">All</option>
           {activitys.map((a) => (
             <option key={a} value={a}>
               {a}

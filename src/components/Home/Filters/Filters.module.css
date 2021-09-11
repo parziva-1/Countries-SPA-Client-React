@@ -19,7 +19,7 @@
 }
 
 .filtersContainer > .button {
-  background-color: var(--goldGray); /* Green */
+  background-color: var(--goldGray);
   border: none;
   color: var(--white);
   padding: 10px 32px;
@@ -27,4 +27,8 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.filtersContainer > .button:active {
+  background-color: var(--gray);
 }

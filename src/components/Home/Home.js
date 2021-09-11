@@ -1,11 +1,12 @@
 import Nav from "./Nav/Nav";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { getAllCountries } from "../../redux/actions";
 import CountryCard from "./CountryCard/CountryCard";
-import { Home as home } from "./Home.module.css";
+import { Home as home, BackGround, link } from "./Home.module.css";
 import Filters from "./Filters/Filters";
 import Pagination from "./Pagination/Pagination";
+import { Link } from "react-router-dom";
 
 let PageSize = 10;
 
@@ -22,19 +23,20 @@ const Home = () => {
   const currentTableData = () => {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
-    console.log(firstPageIndex, lastPageIndex);
     return countries.slice(firstPageIndex, lastPageIndex);
   };
 
   const data = currentTableData();
 
   return (
-    <div>
+    <div className={BackGround}>
       <Nav />
       <Filters />
       <div className={home}>
         {data.map((c) => (
-          <CountryCard key={c.id} {...c} />
+          <Link key={c.id} to={`/country/${c.id}`} className={link}>
+            <CountryCard {...c} />
+          </Link>
         ))}
       </div>
       <Pagination

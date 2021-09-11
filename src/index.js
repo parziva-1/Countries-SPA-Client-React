@@ -7,13 +7,20 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
 import store from "./redux/store";
 import Home from "./components/Home/Home";
+import CountryPage from "./components/CountryPage/CountryPage";
+import NavBar from "./components/Home/Nav/Nav";
+import ActivityPage from "./components/ActivityPage/ActivityPage";
+import LandingPage from "./components/LandingPage/LandingPage";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <Route path="/" exact component={App} />
+        <Route path="/activity" component={ActivityPage} exact></Route>
+        <Route path="/country/" strict component={NavBar} />
+        <Route path="/" exact component={LandingPage} />
         <Route path="/home" strict component={Home} />
+        <Route path="/country/:id" exact component={CountryPage} />
       </Provider>
     </BrowserRouter>
   </React.StrictMode>,

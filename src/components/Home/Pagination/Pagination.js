@@ -36,7 +36,7 @@ const Pagination = ({
       <ul className={styles.paginationContainer}>
         {currentPage !== 1 ? (
           <li className={styles.paginationItem} onClick={onPrevious}>
-            <div className={(styles.arrow, styles.left)}>
+            <div className={`${styles.arrow} ${styles.left}`}>
               <AiOutlineCaretLeft />
             </div>
           </li>
@@ -46,14 +46,20 @@ const Pagination = ({
         {paginationRange.map((pageNumber) => {
           if (pageNumber === DOTS) {
             return (
-              <li className={(styles.paginationItem, styles.dots)}>&#8230;</li>
+              <li
+                key={pageNumber}
+                className={(styles.paginationItem, styles.dots)}
+              >
+                &#8230;
+              </li>
             );
           }
 
           return (
             <li
+              key={pageNumber}
               className={
-                currentPage == pageNumber
+                currentPage === pageNumber
                   ? `${styles.paginationItem} ${styles.current}`
                   : styles.paginationItem
               }

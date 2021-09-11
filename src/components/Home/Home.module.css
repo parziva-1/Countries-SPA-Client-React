@@ -2,6 +2,11 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+}
+
+.BackGround {
+  width: 100%;
+  height: 100%;
   background: linear-gradient(0deg, #0d0d0d, var(--goldGray));
   background-size: 400% 400%;
   -webkit-animation: Gracient 60s ease infinite;
@@ -20,6 +25,7 @@
     background-position: 0% 96%;
   }
 }
+
 @-moz-keyframes Gracient {
   0% {
     background-position: 0% 96%;
@@ -31,6 +37,7 @@
     background-position: 0% 96%;
   }
 }
+
 @keyframes Gracient {
   0% {
     background-position: 0% 96%;
@@ -41,4 +48,8 @@
   100% {
     background-position: 0% 96%;
   }
+}
+
+.link {
+  text-decoration: none;
 }

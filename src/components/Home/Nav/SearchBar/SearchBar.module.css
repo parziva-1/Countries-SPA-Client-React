@@ -1,0 +1,60 @@
+.dataResult {
+  display: flex;
+  position: absolute;
+  margin-top: 5px;
+  width: 300px;
+  height: 200px;
+  background-color: var(--goldGray);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 999;
+  scrollbar-width: none;
+  flex-direction: column;
+  padding-left: 0.2rem;
+}
+
+.dataItem {
+  list-style: none;
+  text-decoration: none;
+  color: var(--white);
+  width: 100%;
+  text-align: start;
+}
+
+.dataItem:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width 0.7s ease, background-color 0.5s ease;
+}
+
+.dataItem:hover:after {
+  width: 100%;
+  background: var(--gold);
+}
+
+.formInput {
+  padding: 5px 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.formButtom {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: var(--goldGray); /* Green */
+  border: none;
+  color: var(--white);
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.formButtom:active {
+  background-color: var(--gray);
+}

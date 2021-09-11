@@ -1,0 +1,18 @@
+.back {
+  background: url(https://evoplay.games/wp-content/uploads/2021/03/1920x1080.jpg);
+  color: white;
+  height: 100vh;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

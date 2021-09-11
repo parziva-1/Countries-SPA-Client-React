@@ -45,6 +45,7 @@
   text-decoration: none;
   font-size: 2rem;
   flex-grow: 1;
+  width: 2rem;
 }
 
 .navMenu {

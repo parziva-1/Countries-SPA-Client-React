@@ -7,7 +7,7 @@ const CountryCard = ({ id, name, continent, image }) => {
         <div>Country: {name}</div>
         <div>Continent: {continent}</div>
       </div>
-      <img src={image} className={Img}></img>
+      <img src={image} className={Img} alt={name}></img>
     </div>
   );
 };
