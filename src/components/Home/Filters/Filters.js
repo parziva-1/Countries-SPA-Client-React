@@ -15,8 +15,22 @@ const Filters = () => {
 
   const hanldeOnChangueFilters = (e) => {
     setFilter((state) => ({ ...state, [e.target.name]: e.target.value }));
+    if (e.target.name === "continent")
+      setFilter((state) => ({ ...state, activity: "All" }));
   };
-  var result = countries;
+
+  const filters = (movies) =>
+    movies.filter(
+      (m) =>
+        (filter.continent === "All"
+          ? true
+          : m.continent === filter.continent) &&
+        (filter.activity === "All"
+          ? true
+          : m.Activities.map((m) => m.name).includes(filter.activity))
+    );
+
+  var result = filters(countries);
 
   if (filter.alf.state) {
     result = result.sort((a, b) =>
@@ -29,16 +43,6 @@ const Filters = () => {
       filter.ord.ord ? a.population - b.population : b.population - a.population
     ); //sort 123
   }
-
-  result = result.filter((c) =>
-    filter.continent === "All" ? c : c.continent === filter.continent
-  ); //filter continent
-
-  result = result.filter((c) =>
-    filter.activity === "All"
-      ? c
-      : c.Activities.some((c) => c.name === filter.activity)
-  ); // filter activity
 
   const continents = [...new Set(countries.map((c) => c.continent))].sort(
     (a, b) => (a > b ? 1 : -1)
@@ -65,7 +69,6 @@ const Filters = () => {
     dispatch({ type: "CountriesFilter", payload: result });
   }, [result]);
 
-  //console.log(result[0]);
   return (
     <div className={styles.Filters}>
       <p>Filters: </p>
@@ -124,6 +127,7 @@ const Filters = () => {
           onChange={hanldeOnChangueFilters}
           name="activity"
           className={styles.button}
+          value={filter.activity}
         >
           <option value="All">All</option>
           {activitys.map((a) => (

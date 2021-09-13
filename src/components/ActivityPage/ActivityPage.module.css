@@ -1,0 +1,132 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  padding: 0.5rem;
+  border: solid 1px var(--goldGray);
+  color: var(--black);
+  border: solid 1px #a5a6a4;
+  margin: 4px 0 4px 0;
+  box-shadow: 5px 5px #a5a6a4, -0.9em 0 2em #40403f75;
+  background-color: var(--gold);
+}
+
+.form > input {
+  background-color: var(--goldGray);
+  color: var(--white);
+  border: none;
+  margin-top: 5px;
+}
+
+.form > select {
+  background-color: var(--goldGray);
+  color: var(--white);
+  border: none;
+  margin-top: 5px;
+}
+
+.form > button {
+  background-color: var(--goldGray);
+  color: var(--white);
+  border: none;
+  margin-top: 5px;
+}
+
+.input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  background: var(--black);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.input:hover {
+  opacity: 1;
+}
+
+.input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: var(--gold);
+  cursor: pointer;
+}
+
+.input::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: var(--gold);
+  cursor: pointer;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #0d0d0d, var(--goldGray));
+  background-size: 400% 400%;
+  -webkit-animation: Gracient 60s ease infinite;
+  -moz-animation: Gracient 60s ease infinite;
+  animation: Gracient 60s ease infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@-webkit-keyframes Gracient {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 5%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
+}
+
+@-moz-keyframes Gracient {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 5%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
+}
+
+@keyframes Gracient {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 5%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+
+.background {
+  height: 100vh;
+}
+
+.names {
+  display: flex;
+  justify-content: space-around;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+}
